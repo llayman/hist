@@ -1,6 +1,4 @@
-# PyCharm Instructions
-
-## Setup
+## PyCharm Setup
 
 1. Clone or download+unzip project into a directory
 2. Open the folder as a PyCharm Project
@@ -12,3 +10,5 @@
 ## Running
 1. Go to Canvas Gradebook and Export. Download the gradebook's CSV file to your project directory.
 2. Run `hist.py` in PyCharm
+
+![Example plot](https://raw.githubusercontent.com/llayman/hist/master/examples/Assignment%203%20-%20Classes%20and%20Objects.png)
