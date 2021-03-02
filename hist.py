@@ -53,6 +53,10 @@ def plot_file(filename):
 
 def main():
     csvs = glob.glob("*.csv")
+    if not csvs:
+        print("No CSV files in current directory.")
+        exit()
+
     print("Select a Canvas gradebook export file (CSV):")
     for i, name in enumerate(csvs):
         print(f"{i}) {name}")
