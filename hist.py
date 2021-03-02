@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 
 plt.style.use('ggplot')
 
-BIN_WIDTH = 10
-
 
 def plot_file(filename):
     with open(filename, newline='') as infile:
@@ -28,15 +26,16 @@ def plot_file(filename):
             if not choice:
                 return
             column = reader.fieldnames[int(choice)]
+            grades = [float(v[column]) for v in gradesheet]
+
+            high_score = max(grades)
             points_possible = float(points[column])
+            upper_limit = high_score if high_score > points_possible else points_possible
             print(f"{column}, Points Possible: {points_possible}")
 
-            grades = [float(v[column]) for v in gradesheet]
-            high_score = max(grades)
             bin_width = int(input("Enter the bin width as an integer: "))
-            num_bins = int(high_score // bin_width) + 1 if high_score > points_possible else int(
-                points_possible // bin_width) + 1
-            bins = [i * bin_width for i in range(num_bins + 1)]
+            num_bins = int(upper_limit // bin_width) + 1
+            bins = [i * bin_width for i in range(int(upper_limit // bin_width) + 2)]
 
             plt.hist(grades, bins=bins, rwidth=0.95)
             plt.ylabel("Count")
