@@ -14,7 +14,7 @@ A small Python script that generates bar plots from Canvas Gradebook exports.
 
 # Running
 
-1. ![Export a Canvas Gradebook](https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-export-grades-in-the-Gradebook/ta-p/809) and download the gradebook's CSV file to your project directory.
+1. [Export a Canvas Gradebook](https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-export-grades-in-the-Gradebook/ta-p/809) and download the gradebook's CSV file to your project directory.
 2. Run `hist.py` in PyCharm
 
 ![Example plot](https://raw.githubusercontent.com/llayman/hist/master/examples/Assignment%203%20-%20Classes%20and%20Objects.png)
