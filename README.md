@@ -1,5 +1,7 @@
-A small Python script that generates bar plots from Canvas Gradebook exports. The user chooses a CSV file in the current
-directory, then selects a column to plot. The plot is displayed and saved to a PNG file.
+A small Python script that generates bar plots from Canvas Gradebook exports. 
+- The user chooses a CSV file in the current directory, then selects a column to plot. 
+- Specify the range for the bars, e.g., 2pts, 5pts, 10pts
+- The plot is displayed and saved to a PNG file.
 
 # PyCharm Setup
 
