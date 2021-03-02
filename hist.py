@@ -13,17 +13,17 @@ def plot_file(filename):
         reader = csv.DictReader(infile)
         # Skip the "Manual Posting" Line
         next(reader)
-        # The "Points Possible" line
+        # Read the "Points Possible" line
         points = next(reader)
-        all_grades = [row for row in reader]
+        gradesheet = [row for row in reader]
         # Remove "Test Student"
-        del all_grades[-1]
+        del gradesheet[-1]
 
         another = 'y'
         while another == 'y':
-            print("Select a column to plot:")
             for i, col in enumerate(reader.fieldnames):
                 print(f"{i}) {col}")
+            print("Select a column to plot or hit Enter to go back:")
             choice = input()
             if not choice:
                 return
@@ -31,10 +31,11 @@ def plot_file(filename):
             points_possible = float(points[column])
             print(f"{column}, Points Possible: {points_possible}")
 
-            grades = [float(v[column]) for v in all_grades]
+            grades = [float(v[column]) for v in gradesheet]
             high_score = max(grades)
             bin_width = int(input("Enter the bin width as an integer: "))
-            num_bins = int(max(grades) // bin_width) + 1 if high_score > points_possible else int(points_possible // bin_width) + 1
+            num_bins = int(high_score // bin_width) + 1 if high_score > points_possible else int(
+                points_possible // bin_width) + 1
             bins = [i * bin_width for i in range(num_bins + 1)]
 
             plt.hist(grades, bins=bins, rwidth=0.95)
