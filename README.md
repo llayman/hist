@@ -4,6 +4,7 @@ A small Python script that generates bar plots from Canvas Gradebook exports.
 - The plot is displayed and saved to a PNG file.
 
 # Windows quick start
+Download+unzip or clone the GitHub project.
 Open a terminal 
 
     cd <project directory>
@@ -14,6 +15,7 @@ Open a terminal
 You must `.venv\Scripts\activate` any time you re-open the terminal before running `python hist.py` 
 
 # Mac/Linux quick start
+Download+unzip or clone the GitHub project.
 Open a terminal 
 
     cd <project directory>
@@ -26,7 +28,7 @@ You must `source .venv/bin/activate` any time you re-open the terminal before ru
 
 # PyCharm Setup
 
-1. Clone or download+unzip project into a directory
+1. Download+unzip or clone the GitHub project.
 2. Open the folder as a PyCharm Project
 3. Go to Settings -> Project: <project-name> -> Python Interpreter
 4. Select the Gear icon in the top right -> Add...
