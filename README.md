@@ -3,6 +3,16 @@ A small Python script that generates bar plots from Canvas Gradebook exports.
 - Specify the range for the bars, e.g., 2pts, 5pts, 10pts
 - The plot is displayed and saved to a PNG file.
 
+# Windows quick start
+Open a terminal, and `cd` into the project directory:
+
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r requirements.txt
+    python hist.py
+    
+
+
 # PyCharm Setup
 
 1. Clone or download+unzip project into a directory
