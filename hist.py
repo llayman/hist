@@ -1,10 +1,11 @@
 import csv
 import glob
+import string
 
 import matplotlib.pyplot as plt
 
 plt.style.use('ggplot')
-
+VALID_CHARS = "-_.() %s%s" % (string.ascii_letters, string.digits)
 
 def plot_file(filename):
     with open(filename, newline='') as infile:
@@ -42,10 +43,13 @@ def plot_file(filename):
             plt.xlabel("Score")
             plt.xticks(range(0, (num_bins + 1) * bin_width, bin_width))
 
-            title = column[:column.rindex(' ')]
+            MAX_TITLE_LEN = 50
+            title_spacer = column.rindex(' ')
+            title = column[:title_spacer] if title_spacer <= MAX_TITLE_LEN else column[:MAX_TITLE_LEN] + "..."
             plt.title(f"{title}\nOut of {points_possible} points")
-            plt.savefig(title + '.png', bbox_inches='tight')
-            print(f"File saved: {column + '.png'}")
+            plot_filename = ''.join(c for c in column[:title_spacer] if c in VALID_CHARS)
+            plt.savefig(plot_filename + '.png', bbox_inches='tight')
+            print(f"File saved: {plot_filename + '.png'}")
             plt.show()
 
             another = input("Would you like to do another? y/n ")
