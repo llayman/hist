@@ -21,7 +21,8 @@ def plot_file(filename):
         another = 'y'
         while another == 'y':
             for i, col in enumerate(reader.fieldnames):
-                print(f"{i}) {col}")
+                if any(x in col for x in ['Quiz ', 'Assignment ']):
+                    print(f"{i}) {col}")
             print("Select a column to plot or hit Enter to go back:")
             choice = input()
             if not choice:
